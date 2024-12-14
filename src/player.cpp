@@ -20,6 +20,7 @@ float Player::GetAirTime(){return this->airtime;}
 void Player::Tick(){
     this->GetInput();
     this->UpdatePhysics();
+    //Not adding this here would lead to spasms whenever the player lands.
     if (this->position.y >= HEIGHT - this->hitBoxSize.y && !this->onGround) {
         this->velocity.y = 0;
         this->acceleration.y = 0;
@@ -29,6 +30,7 @@ void Player::Tick(){
 }
 
 void Player::Draw(){
+    //For now the player is 2D
     DrawRectangle(this->position.x, this->position.y, 
                   this->hitBoxSize.x, this->hitBoxSize.y, this->colour);
 }
@@ -41,7 +43,7 @@ Player::~Player(){
 }
 
 //Private ------------------------------------------------------------------------
-
+//TODO: Write a comment.
 void Player::UpdatePhysics(){
     this->velocity.y -= this->acceleration.y * DeltaT; 
 
@@ -55,7 +57,7 @@ void Player::UpdatePhysics(){
     }
     this->position.x += this->velocity.x * DeltaT;
 }
-
+//Input function. It's awful. Too bad!
 void Player::GetInput(){
     if (this->onGround && IsKeyPressed(KEY_SPACE)){
         this->velocity.y -= this->speed.y;

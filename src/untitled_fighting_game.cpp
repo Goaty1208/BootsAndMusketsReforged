@@ -9,7 +9,7 @@ int main() {
 
     InitWindow(WIDTH, HEIGHT, "Untitled Fighting Game --- 0.0.0");
 
-    SetTargetFPS(60);
+    SetTargetFPS(FPS);
 
     while (!WindowShouldClose()) {
 
