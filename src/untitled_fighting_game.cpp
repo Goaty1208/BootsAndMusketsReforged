@@ -1,5 +1,4 @@
 #include <raylib.h>
-#include <fstream>
 #include <iostream>
 #include "globals.hpp"
 #include "player.hpp"
@@ -10,6 +9,7 @@ int main() {
     Player left;
 
     InitWindow(WIDTH, HEIGHT, "Untitled Fighting Game --- 0.0.0");
+    InitSettings();
 
     SetTargetFPS(SETTINGS.game.TARGET_FPS);
     SetExitKey(SETTINGS.keybinds.GAME_CLOSE);

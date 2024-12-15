@@ -1,4 +1,3 @@
-rm -rf ./build/bin/debug/
 cmake -S . -B build
 cmake --build build
 cp -a ./src/build/. ./build/bin/debug/

@@ -2,6 +2,7 @@
 
 #include <raylib.h>
 #include <nlohmann/json.hpp>
+#include <fstream>
 using json = nlohmann::json;
 
 struct Keybinds {
@@ -10,15 +11,24 @@ struct Keybinds {
     KeyboardKey MOVE_LEFT = KEY_A;
     KeyboardKey MOVE_RIGHT = KEY_D;
     KeyboardKey GAME_CLOSE = KEY_ESCAPE;
+    // Automatically define serialization and deserialization
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Keybinds, MOVE_JUMP, MOVE_CROUCH, MOVE_LEFT, MOVE_RIGHT, GAME_CLOSE)
 };
 
 struct Game {
     int TARGET_FPS = 60;
+    // Idem
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Game, TARGET_FPS)
 };
 
 struct Settings {
     Keybinds keybinds;
     Game game;
+    // Ibidem
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Settings, keybinds, game)
 };
 
 extern Settings SETTINGS;
+
+
+void InitSettings();
