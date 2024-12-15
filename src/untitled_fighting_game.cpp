@@ -11,7 +11,7 @@ int main() {
 
     InitWindow(WIDTH, HEIGHT, "Untitled Fighting Game --- 0.0.0");
 
-    SetTargetFPS(FPS);
+    SetTargetFPS(SETTINGS.game.TARGET_FPS);
     SetExitKey(SETTINGS.keybinds.GAME_CLOSE);
 
     while (!WindowShouldClose()) {

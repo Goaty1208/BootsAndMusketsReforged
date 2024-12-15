@@ -12,8 +12,13 @@ struct Keybinds {
     KeyboardKey GAME_CLOSE = KEY_ESCAPE;
 };
 
+struct Game {
+    int TARGET_FPS = 60;
+};
+
 struct Settings {
     Keybinds keybinds;
+    Game game;
 };
 
 extern Settings SETTINGS;
