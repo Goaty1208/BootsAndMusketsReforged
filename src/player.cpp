@@ -59,13 +59,13 @@ void Player::UpdatePhysics(){
 }
 //Input function. It's awful. Too bad!
 void Player::GetInput(){
-    if (this->onGround && IsKeyPressed(KEY_SPACE)){
+    if (this->onGround && IsKeyPressed(SETTINGS.keybinds.MOVE_JUMP)){
         this->velocity.y -= this->speed.y;
     }
-    if (IsKeyDown(KEY_A)){
+    if (IsKeyDown(SETTINGS.keybinds.MOVE_LEFT)){
         this->position.x -= this->speed.x;
     }
-    if (IsKeyDown(KEY_D)){
+    if (IsKeyDown(SETTINGS.keybinds.MOVE_RIGHT)){
          this->position.x += this->speed.x;
     }
 }

@@ -1,4 +1,6 @@
 #pragma once
+
+#include "settings.hpp"
 //If I hear anyone complain about globals I'll cry :(
 
 extern unsigned int FPS;

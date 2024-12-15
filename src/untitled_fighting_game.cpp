@@ -3,14 +3,16 @@
 #include <iostream>
 #include "globals.hpp"
 #include "player.hpp"
+#include "settings.hpp"
 
 int main() {
 
-    /*Player left;
+    Player left;
 
     InitWindow(WIDTH, HEIGHT, "Untitled Fighting Game --- 0.0.0");
 
     SetTargetFPS(FPS);
+    SetExitKey(SETTINGS.keybinds.GAME_CLOSE);
 
     while (!WindowShouldClose()) {
 
@@ -24,7 +26,6 @@ int main() {
             left.Draw();
         EndDrawing();
     }
-    */
 
     return 0;
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include <raylib.h>
 #include "globals.hpp"
+#include "settings.hpp"
 
 class Player {
     public:
