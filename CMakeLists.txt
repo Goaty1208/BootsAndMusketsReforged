@@ -25,6 +25,14 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(raylib)
 
+# Fetch nlohmann/json
+FetchContent_Declare(
+    json
+    GIT_REPOSITORY https://github.com/nlohmann/json.git
+    GIT_TAG v3.11.2 # Use a specific version; you can update this as needed
+)
+FetchContent_MakeAvailable(json)
+
 # Ensure Raylib examples are not built
 set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
@@ -51,8 +59,8 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 # Include source directory for header files
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
-# Link Raylib to the project
-target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
+# Link Raylib and nlohmann/json to the project
+target_link_libraries(${PROJECT_NAME} PRIVATE raylib nlohmann_json::nlohmann_json)
 
 # Add compiler flags
 if (MSVC)
