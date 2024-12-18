@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(untitled_fighting_game)
+project(bootsAndMuskets)
 
 # Set the version of Raylib required
 set(RAYLIB_VERSION 5.0)
