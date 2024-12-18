@@ -6,13 +6,13 @@
 using json = nlohmann::json;
 
 struct Keybinds {
-    KeyboardKey MOVE_JUMP = KEY_W;
-    KeyboardKey MOVE_CROUCH = KEY_S;
+    KeyboardKey MOVE_UP = KEY_W;
+    KeyboardKey MOVE_DOWN = KEY_S;
     KeyboardKey MOVE_LEFT = KEY_A;
     KeyboardKey MOVE_RIGHT = KEY_D;
     KeyboardKey GAME_CLOSE = KEY_ESCAPE;
     // Automatically define serialization and deserialization
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Keybinds, MOVE_JUMP, MOVE_CROUCH, MOVE_LEFT, MOVE_RIGHT, GAME_CLOSE)
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Keybinds, MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, GAME_CLOSE)
 };
 
 struct Game {

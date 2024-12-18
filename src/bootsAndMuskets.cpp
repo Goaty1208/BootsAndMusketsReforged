@@ -1,14 +1,13 @@
 #include <raylib.h>
 #include <iostream>
 #include "globals.hpp"
-#include "player.hpp"
 #include "settings.hpp"
 
 int main() {
 
-    Player left;
-
-    InitWindow(WIDTH, HEIGHT, "Untitled Fighting Game --- 0.0.0");
+    InitWindow(WIDTH, HEIGHT, "Boots and Muskets --- 0.0.0");
+    
+    ToggleFullscreen();
     InitSettings();
 
     SetTargetFPS(SETTINGS.game.TARGET_FPS);
@@ -16,14 +15,12 @@ int main() {
 
     while (!WindowShouldClose()) {
 
+
         DeltaT = GetFrameTime();
 
-        left.Tick();
-
         BeginDrawing();
-            ClearBackground(BLUE);
+            ClearBackground(BLACK);
             DrawFPS(0,0);
-            left.Draw();
         EndDrawing();
     }
 
