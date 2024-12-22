@@ -19,10 +19,11 @@ struct Sprite {
     int textureID;
     Vector2 position;
 
-    Sprite(unsigned int textureID){
+    Sprite(unsigned int textureID, float x, float y){
         this->spriteID = SPRITES;
         SPRITES++;
         this->textureID = textureID; 
+        this->position = {x, y};
     }
 
     void Draw(){

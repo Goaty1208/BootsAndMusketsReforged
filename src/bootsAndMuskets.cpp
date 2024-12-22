@@ -20,7 +20,6 @@ int main() {
 
     while (!WindowShouldClose()) {
 
-
         DeltaT = GetFrameTime();
 
         BeginDrawing();
