@@ -20,6 +20,10 @@ private:
 public:
     Scene(SceneType SceneType);
     ~Scene();
+
+    void AddSprite(Sprite sprite);
+    void GetSprite();
+
 };
 
 

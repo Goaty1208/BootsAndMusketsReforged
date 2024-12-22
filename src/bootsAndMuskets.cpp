@@ -2,6 +2,8 @@
 #include <iostream>
 #include "globals.hpp"
 #include "settings.hpp"
+#include "scene.hpp"
+#include "sprite.hpp"
 
 int main() {
 
@@ -10,6 +12,8 @@ int main() {
     
     ToggleFullscreen();
     InitSettings();
+
+    LoadTextures();
 
     SetTargetFPS(SETTINGS.game.TARGET_FPS);
     SetExitKey(SETTINGS.keybinds.GAME_CLOSE);
