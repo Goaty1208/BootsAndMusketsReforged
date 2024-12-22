@@ -6,6 +6,7 @@
 int main() {
 
     InitWindow(WIDTH, HEIGHT, "Boots and Muskets --- 0.0.0");
+    InitAudioDevice();
     
     ToggleFullscreen();
     InitSettings();
@@ -23,6 +24,9 @@ int main() {
             DrawFPS(0,0);
         EndDrawing();
     }
+
+    CloseAudioDevice();
+    CloseWindow();
 
     return 0;
 }
