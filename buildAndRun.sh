@@ -1,6 +1,6 @@
 cmake -S . -B build
 cmake --build build
-cp -a ./src/build/. ./build/bin/debug/
+cp -a ./src/build/. ./build/bin/
 cd ./build/bin/
 ./bootsAndMuskets
 cd ..

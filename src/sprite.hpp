@@ -6,13 +6,13 @@
 #include "globals.hpp"
 
 extern std::vector<Texture2D> GameTextures;
-bool texturesLoaded = false;
+extern bool texturesLoaded;
 
 /*
     Loads textures from "texture.txt". The line number of each file name in
     that file is also the ID for that texture.
 */
-void LoadTextures(){}
+void LoadTextures();
 
 struct Sprite {
     int spriteID;
