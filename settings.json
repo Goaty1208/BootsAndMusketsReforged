@@ -1,0 +1,12 @@
+{
+    "game": {
+        "TARGET_FPS": 60
+    },
+    "keybinds": {
+        "GAME_CLOSE": 256,
+        "MOVE_DOWN": 83,
+        "MOVE_LEFT": 65,
+        "MOVE_RIGHT": 68,
+        "MOVE_UP": 87
+    }
+}

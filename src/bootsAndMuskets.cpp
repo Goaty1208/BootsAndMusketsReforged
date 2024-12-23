@@ -10,7 +10,9 @@ int main() {
     InitWindow(WIDTH, HEIGHT, "Boots and Muskets --- 0.0.0");
     InitAudioDevice();
     
-    ToggleFullscreen();
+    //ToggleFullscreen();
+    //WIDTH = GetScreenWidth();
+    //HEIGHT = GetScreenHeight();
     InitSettings();
 
     LoadTextures();
@@ -18,12 +20,22 @@ int main() {
     SetTargetFPS(SETTINGS.game.TARGET_FPS);
     SetExitKey(SETTINGS.keybinds.GAME_CLOSE);
 
+    Scene scene(GAME);
+    Sprite test(0, 0.0f, 0.0f);
+    scene.AddSprite(test);
+
     while (!WindowShouldClose()) {
 
         DeltaT = GetFrameTime();
 
+        scene.Update();
+
         BeginDrawing();
             ClearBackground(BLACK);
+            BeginMode2D(scene.camera);
+                scene.DrawSceneSprites();
+            EndMode2D();
+            scene.DrawSceneGUI();
             DrawFPS(0,0);
         EndDrawing();
     }

@@ -1,7 +1,10 @@
 #pragma once
 #include <raylib.h>
 #include <vector>
+#include <functional>
+#include <bits/stdc++.h> 
 #include "sprite.hpp"
+#include "globals.hpp"
 
 enum SceneType {
     LOADING,
@@ -11,9 +14,9 @@ enum SceneType {
 
 class Scene{
 private:
-    std::vector<Sprite> sprites;
-    std::vector<Sound> sounds;
-    std::vector<Music> music;
+    std::vector<std::reference_wrapper<Sprite>> sprites;
+    std::vector<std::reference_wrapper<Sound>> sounds;
+    std::vector<std::reference_wrapper<Music>> music;
 
     SceneType sceneType;
 
@@ -21,9 +24,18 @@ public:
     Scene(SceneType SceneType);
     ~Scene();
 
-    void AddSprite(Sprite sprite);
-    void GetSprite();
+    //TODO: private scene camera
+    Camera2D camera;
 
+    void AddSprite(Sprite& sprite);
+    void AddSound(Sound& sound);
+    void AddMusic(Music& music);
+    //TODO: Implement getters
+    //void GetSprite(unsigned int id);
+
+    void Update();
+    void DrawSceneGUI();
+    void DrawSceneSprites();
 };
 
 
