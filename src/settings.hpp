@@ -11,7 +11,7 @@ struct Keybinds {
     KeyboardKey MOVE_LEFT = KEY_A;
     KeyboardKey MOVE_RIGHT = KEY_D;
     KeyboardKey GAME_CLOSE = KEY_ESCAPE;
-    // Automatically define serialization and deserialization
+    // Automatically define serialisation and deserialisation
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(Keybinds, MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, GAME_CLOSE)
 };
 
