@@ -13,6 +13,11 @@ endif()
 
 message(STATUS "Compiling for ${OS_PLATFORM}")
 
+# Allow setting the build type, default to Debug for development
+if (NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type (Debug/Release/RelWithDebInfo/MinSizeRel)" FORCE)
+endif()
+
 # Generate compile_commands.json for development tools
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -64,9 +69,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE raylib nlohmann_json::nlohmann_jso
 
 # Add compiler flags
 if (MSVC)
-    target_compile_options(${PROJECT_NAME} PRIVATE /W4) # Windows, Visual Studio
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /ZI) # Windows, Visual Studio
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /ZI")
 else()
-    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wwrite-strings) # Linux, GCC/Clang
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wwrite-strings -g) # Linux, GCC/Clang
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 endif()
 
 # Platform-specific configurations
