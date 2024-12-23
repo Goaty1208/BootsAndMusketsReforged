@@ -24,7 +24,7 @@ void Scene::AddMusic(Music& music){
 }
 
 void Scene::Update(){
-    //this->camera.zoom = sin(GetTime());
+    
 }
 
 void Scene::DrawSceneGUI(){  
