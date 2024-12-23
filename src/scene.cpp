@@ -24,7 +24,19 @@ void Scene::AddMusic(Music& music){
 }
 
 void Scene::Update(){
-    
+    switch (this->sceneType){
+    case LOADING:
+        /* code */
+        break;
+    case MENU:
+        /* code */
+        break;
+    case GAME:
+        /* code */
+        break;    
+    default:
+        break;
+    }
 }
 
 void Scene::DrawSceneGUI(){  
