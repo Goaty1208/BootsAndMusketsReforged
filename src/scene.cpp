@@ -35,7 +35,6 @@ void Scene::DrawSceneGUI(){
 }
 
 void Scene::DrawSceneSprites(){  
-    DrawRectangle(-10000,-10000, 1000000, 1000000, BLUE);
     for (auto& sprite : this->sprites){
         sprite.get().Draw();
     }
