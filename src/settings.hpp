@@ -19,8 +19,13 @@ struct Game {
     unsigned int TARGET_FPS = 60;
     unsigned int WIDTH = 800;
     unsigned int HEIGHT = 800;
+    #ifdef DEBUG
+        bool SHOW_FPS = true;
+    #else
+        bool SHOW_FPS = false;
+    #endif
     // Idem
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Game, TARGET_FPS, WIDTH, HEIGHT)
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Game, TARGET_FPS, WIDTH, HEIGHT, SHOW_FPS)
 };
 
 struct Settings {

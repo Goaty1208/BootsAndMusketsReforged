@@ -23,7 +23,6 @@ int main() {
 
     Scene scene(GAME);
     Sprite test(0, 0.0f, 0.0f);
-    scene.AddSprite(test);
 
     while (!WindowShouldClose()) {
 
@@ -37,7 +36,10 @@ int main() {
                 scene.DrawSceneSprites();
             EndMode2D();
             scene.DrawSceneGUI();
-            DrawFPS(0,0);
+            //Indipendent of the scene, you 
+            //should ALWAYS render FPS on top for debugging reasons
+            if(SETTINGS.game.SHOW_FPS)
+                DrawFPS(0,0);
         EndDrawing();
     }
 
