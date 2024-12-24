@@ -1,5 +1,6 @@
 #pragma once
 #include <raylib.h>
+#include <raymath.h>
 #include <vector>
 #include <functional>
 #include <bits/stdc++.h> 
@@ -20,6 +21,8 @@ private:
 
     SceneType sceneType;
     Camera2D camera;
+
+    void CameraInput();
 
 public:
     Scene(SceneType SceneType);

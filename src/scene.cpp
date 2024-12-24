@@ -42,13 +42,11 @@ void Scene::AddMusic(Music& music){
 void Scene::Update(){
     switch (this->sceneType){
     case LOADING:
-        /* code */
         break;
     case MENU:
-        /* code */
         break;
     case GAME:
-        /* code */
+        this->CameraInput();
         break;    
     default:
         break;
@@ -79,5 +77,14 @@ void Scene::DrawSceneGUI(){
 void Scene::DrawSceneSprites(){  
     for (auto& sprite : this->sprites){
         sprite.get().Draw();
+    }
+}
+
+//User related functions
+void Scene::CameraInput(){
+    if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT)){
+        Vector2 delta = GetMouseDelta();
+        delta = Vector2Scale(delta, -1.0f/camera.zoom);
+        camera.target = Vector2Add(camera.target, delta);
     }
 }
