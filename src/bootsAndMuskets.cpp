@@ -6,14 +6,15 @@
 #include "sprite.hpp"
 
 int main() {
-
-    InitWindow(WIDTH, HEIGHT, "Boots and Muskets --- 0.0.0");
-    InitAudioDevice();
     
     //ToggleFullscreen();
-    //WIDTH = GetScreenWidth();
-    //HEIGHT = GetScreenHeight();
+    //SETTINGS.game.WIDTH = GetScreenWidth();
+    //SETTINGS.game.HEIGHT = GetScreenHeight();
+    
     InitSettings();
+
+    InitWindow(SETTINGS.game.WIDTH, SETTINGS.game.HEIGHT, "Boots and Muskets --- 0.0.0");
+    InitAudioDevice();
 
     LoadTextures();
 

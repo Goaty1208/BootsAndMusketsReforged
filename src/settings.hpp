@@ -16,9 +16,11 @@ struct Keybinds {
 };
 
 struct Game {
-    int TARGET_FPS = 60;
+    unsigned int TARGET_FPS = 60;
+    unsigned int WIDTH = 800;
+    unsigned int HEIGHT = 800;
     // Idem
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Game, TARGET_FPS)
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(Game, TARGET_FPS, WIDTH, HEIGHT)
 };
 
 struct Settings {
