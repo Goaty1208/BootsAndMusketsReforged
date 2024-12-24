@@ -36,10 +36,6 @@ int main() {
                 scene.DrawSceneSprites();
             EndMode2D();
             scene.DrawSceneGUI();
-            //Indipendent of the scene, you 
-            //should ALWAYS render FPS on top for debugging reasons
-            if(SETTINGS.game.SHOW_FPS)
-                DrawFPS(0,0);
         EndDrawing();
     }
 

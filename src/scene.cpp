@@ -70,6 +70,10 @@ void Scene::DrawSceneGUI(){
         DrawText(cameraPos.c_str(), 0, 20, 20, WHITE);
         DrawText(cameraZoom.c_str(), 0, 42, 20, WHITE);
     #endif
+    //Originally this was in the main, but then I realised that that was
+    //remarkably stupid and pointless.
+    if(SETTINGS.game.SHOW_FPS)
+        DrawFPS(0,0);
 }
 
 void Scene::DrawSceneSprites(){  
