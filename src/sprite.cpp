@@ -27,3 +27,9 @@ void LoadTextures(){
 
     file.close();
 }
+
+void UnloadTextures(){
+    for (auto i : GameTextures){
+        UnloadTexture(i);
+    }
+}

@@ -13,6 +13,7 @@ extern bool texturesLoaded;
     that file is also the ID for that texture.
 */
 void LoadTextures();
+void UnloadTextures();
 
 struct Sprite {
     int spriteID;
