@@ -32,7 +32,7 @@ int main() {
 
         BeginDrawing();
             ClearBackground(BLACK);
-            BeginMode2D(scene.camera);
+            BeginMode2D(scene.GetCamera());
                 scene.DrawSceneSprites();
             EndMode2D();
             scene.DrawSceneGUI();

@@ -76,6 +76,13 @@ else()
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 endif()
 
+# Add defines based on build type
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE DEBUG)
+else()
+    target_compile_definitions(${PROJECT_NAME} PRIVATE RELEASE)
+endif()
+
 # Platform-specific configurations
 if (WIN32)
     # Windows-specific libraries

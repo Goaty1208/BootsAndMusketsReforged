@@ -4,8 +4,23 @@ Scene::Scene(SceneType SceneType){
     this->sceneType = SceneType;
     this->camera.offset = {0.0f, 0.0f};
     this->camera.target = {0.0f, 0.0f};
-     this->camera.rotation = 0.0f;
+    this->camera.rotation = 0.0f;
     this->camera.zoom = 1.0f;
+
+    //Init Code run only when the scene is first initialised
+    switch (this->sceneType){
+    case LOADING:
+        /* code */
+        break;
+    case MENU:
+        /* code */
+        break;
+    case GAME:
+        /* code */
+        break;    
+    default:
+        break;
+    }
 }
 
 Scene::~Scene(){
@@ -23,6 +38,7 @@ void Scene::AddMusic(Music& music){
     this->music.emplace_back(music);
 }
 
+//Updates ran once per frame
 void Scene::Update(){
     switch (this->sceneType){
     case LOADING:
@@ -39,11 +55,21 @@ void Scene::Update(){
     }
 }
 
+Camera2D& Scene::GetCamera(){
+    return this->camera;
+}
+
+Sprite& Scene::GetSprite(unsigned int id){
+    return this->sprites[id].get();
+}
+
 void Scene::DrawSceneGUI(){  
-    std::string cameraPos = "X: " + std::to_string(this-> camera.offset.x) + " Y: " + std::to_string(this-> camera.offset.y);
-    std::string cameraZoom = "Zoom: " + std::to_string(this-> camera.zoom);
-    DrawText(cameraPos.c_str(), 0, 20, 20, WHITE);
-    DrawText(cameraZoom.c_str(), 0, 42, 20, WHITE);
+    #ifdef DEBUG
+        std::string cameraPos = "X: " + std::to_string(this-> camera.offset.x) + " Y: " + std::to_string(this-> camera.offset.y);
+        std::string cameraZoom = "Zoom: " + std::to_string(this-> camera.zoom);
+        DrawText(cameraPos.c_str(), 0, 20, 20, WHITE);
+        DrawText(cameraZoom.c_str(), 0, 42, 20, WHITE);
+    #endif
 }
 
 void Scene::DrawSceneSprites(){  

@@ -19,19 +19,19 @@ private:
     std::vector<std::reference_wrapper<Music>> music;
 
     SceneType sceneType;
+    Camera2D camera;
 
 public:
     Scene(SceneType SceneType);
     ~Scene();
 
-    //TODO: private scene camera
-    Camera2D camera;
-
     void AddSprite(Sprite& sprite);
     void AddSound(Sound& sound);
     void AddMusic(Music& music);
+
     //TODO: Implement getters
-    //void GetSprite(unsigned int id);
+    Camera2D& GetCamera();
+    Sprite& GetSprite(unsigned int id);
 
     void Update();
     void DrawSceneGUI();
