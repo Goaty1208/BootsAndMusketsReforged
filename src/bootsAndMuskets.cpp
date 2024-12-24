@@ -13,7 +13,7 @@ int main() {
     
     InitSettings();
 
-    InitWindow(SETTINGS.game.WIDTH, SETTINGS.game.HEIGHT, "Boots and Muskets --- 0.0.0");
+    InitWindow(SETTINGS.game.WIDTH, SETTINGS.game.HEIGHT, "Boots and Muskets --- 0.0.1");
     InitAudioDevice();
 
     LoadTextures();
@@ -22,7 +22,10 @@ int main() {
     SetExitKey(SETTINGS.keybinds.GAME_CLOSE);
 
     Scene scene(GAME);
-    Sprite test(0, 0.0f, 0.0f);
+    #ifdef DEBUG
+        Sprite test(0, 0.0f, 0.0f);
+        scene.AddSprite(test);
+    #endif
 
     while (!WindowShouldClose()) {
 

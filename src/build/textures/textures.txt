@@ -1,2 +1,3 @@
+debug.png
 grass.png
 water.png
