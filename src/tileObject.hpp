@@ -1,6 +1,12 @@
 #pragma once
 #include "sprite.hpp"
 
+//TODO: move to a util header
+struct IntVector2D{
+    int x;
+    int y;
+};
+
 enum TileTypes {
     WATER,
     GRASS
@@ -9,9 +15,9 @@ enum TileTypes {
 struct TileObject{
 private:
     TileTypes type;
-    Vector2 position;
+    IntVector2D position;
 public:
-    TileObject(TileTypes type, float x, float y){
+    TileObject(TileTypes type, int x, int y){
         this->type = type;
         this->position = {x,y};
     };
