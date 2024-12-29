@@ -33,3 +33,6 @@
 
 #Build Directory
 /build
+
+#VScode
+*.code-workspace
