@@ -6,6 +6,7 @@
 #include <bits/stdc++.h> 
 #include "sprite.hpp"
 #include "globals.hpp"
+#include "mapObject.hpp"
 
 enum SceneType {
     LOADING,
@@ -21,6 +22,7 @@ private:
 
     SceneType sceneType;
     Camera2D camera;
+    MapObject map;
 
     void CameraInput();
 

@@ -1,6 +1,6 @@
 #include "scene.hpp"
 
-Scene::Scene(SceneType SceneType){
+Scene::Scene(SceneType SceneType) : map(0){
     this->sceneType = SceneType;
     this->camera.offset = {0.0f, 0.0f};
     this->camera.target = {0.0f, 0.0f};
