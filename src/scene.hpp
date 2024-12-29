@@ -28,6 +28,9 @@ public:
     Scene(SceneType SceneType);
     ~Scene();
 
+    //TODO: Private and implement getter
+    unsigned int ID = SCENES;
+
     void AddSprite(Sprite& sprite);
     void AddSound(Sound& sound);
     void AddMusic(Music& music);

@@ -7,6 +7,8 @@ Scene::Scene(SceneType SceneType){
     this->camera.rotation = 0.0f;
     this->camera.zoom = 1.0f;
 
+    SCENES++;
+
     //Init Code run only when the scene is first initialised
     switch (this->sceneType){
     case LOADING:

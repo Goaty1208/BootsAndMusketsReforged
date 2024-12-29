@@ -7,3 +7,4 @@ extern int GRAVITY;
 extern double DeltaT;
 
 extern unsigned int SPRITES;
+extern unsigned int SCENES;
