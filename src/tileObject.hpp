@@ -17,9 +17,7 @@ private:
     TileTypes type;
     IntVector2D position;
 public:
-    TileObject(TileTypes type, int x, int y){
-        this->type = type;
-        this->position = {x,y};
-    };
+    TileObject();
+    TileObject(TileTypes type, int x, int y);
     ~TileObject();
 };

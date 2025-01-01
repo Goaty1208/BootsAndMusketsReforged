@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include <cmath>
 #include "tileObject.hpp"
 #include "sprite.hpp"
 #include "globals.hpp"
@@ -19,20 +18,3 @@ public:
 
     std::vector<TileObject>& GetMapTiles();
 };
-
-MapObject::MapObject(unsigned int mapSize){
-    if (mapSize == 0){
-        this->isEmpty = true;
-        return;
-    }
-
-    this->isEmpty = false;
-    this->mapTiles.resize(mapSize);
-}
-
-MapObject::~MapObject(){
-}
-
-std::vector<TileObject>& MapObject::GetMapTiles(){
-    return this->mapTiles;
-}
