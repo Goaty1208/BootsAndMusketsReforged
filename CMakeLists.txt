@@ -72,7 +72,7 @@ if (MSVC)
     target_compile_options(${PROJECT_NAME} PRIVATE /W4 /ZI) # Windows, Visual Studio
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /ZI")
 else()
-    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wwrite-strings -g) # Linux, GCC/Clang
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wwrite-strings -Wmissing-field-initializers -g) # Linux, GCC/Clang
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 endif()
 
