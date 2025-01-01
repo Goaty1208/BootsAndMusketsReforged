@@ -11,6 +11,7 @@ MapObject::MapObject(unsigned int mapSize){
 }
 
 MapObject::~MapObject(){
+    this->mapTiles.clear();
 }
 
 std::vector<TileObject>& MapObject::GetMapTiles(){

@@ -26,6 +26,11 @@ Scene::Scene(SceneType SceneType) : map(0){
 }
 
 Scene::~Scene(){
+    this->music.clear();
+    this->sounds.clear();
+    this->sprites.clear();
+
+    this->map.~MapObject();
 }
 
 void Scene::AddSprite(Sprite& sprite){
