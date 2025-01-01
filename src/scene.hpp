@@ -1,6 +1,16 @@
 #pragma once
 #include <raylib.h>
-#include <raymath.h>
+//Yeah, this IS necessary
+#ifdef __GNUC__
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+#endif
+
+#include "raymath.h"
+
+#ifdef __GNUC__
+    #pragma GCC diagnostic pop
+#endif
 #include <vector>
 #include <functional>
 #include <bits/stdc++.h> 
