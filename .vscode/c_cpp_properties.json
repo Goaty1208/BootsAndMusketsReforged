@@ -6,7 +6,9 @@
                 "${default}",
                 "${workspaceFolder}/build/_deps/raylib-build/raylib/include",
                 "${workspaceFolder}/build/_deps/json-src/include",
-                "${workspaceFolder}/build/_deps/json-src/include/nlohmann"
+                "${workspaceFolder}/build/_deps/json-src/include/nlohmann",
+                "${workspaceFolder}/build/_deps/raylib-src/src",
+                "${workspaceFolder}/build/_deps/raylib-build/raylib/include"
             ],
             "defines": [],
             "cStandard": "c17",
